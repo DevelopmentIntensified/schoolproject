@@ -13,6 +13,6 @@ jobs:
       with:
         server: ftp://4606679@f27-preview.runhosting.com/
         username: 4606679
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /home/www/schoolproject2.atwebpages.com
         local-dir: ./
