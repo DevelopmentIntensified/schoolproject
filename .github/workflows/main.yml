@@ -1,18 +1,16 @@
+name: Deploy via ftp
 on: push
-name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ftp://4606679@f27-preview.runhosting.com/
-        username: "4606679"
+        host: ftp://4606679@f27-preview.runhosting.com/
+        user: "4606679"
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/www/schoolproject2.atwebpages.com
-        local-dir: ./
+        serverDir: /home/www/schoolproject2.atwebpages.com
+        localDir: ./
