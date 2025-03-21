@@ -12,7 +12,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp://4606679@f27-preview.runhosting.com/
-        username: 4606679
+        username: "4606679"
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /home/www/schoolproject2.atwebpages.com
         local-dir: ./
