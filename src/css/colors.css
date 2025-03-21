@@ -1,0 +1,61 @@
+:root {
+    /* color picker: https://uicolors.app/generate/2f6bd7-c51616 */
+    --primary-color-50: #f0f7fe;
+    --primary-color-100: #deebfb;
+    --primary-color-200: #c5def8;
+    --primary-color-300: #9dcaf3;
+    --primary-color-400: #6eacec;
+    --primary-color-500: #4c8de5;
+    --primary-color-600: #2f6bd7;
+    --primary-color-700: #2e5dc7;
+    --primary-color-800: #2b4ca2;
+    --primary-color-900: #284380;
+    --primary-color-950: #1d2a4e;
+    --secondary-color-50: #fff1f1;
+    --secondary-color-100: #ffe1e1;
+    --secondary-color-200: #ffc8c8;
+    --secondary-color-300: #ffa1a1;
+    --secondary-color-400: #fe6b6b;
+    --secondary-color-500: #f63d3d;
+    --secondary-color-600: #e41e1e;
+    --secondary-color-700: #c51616;
+    --secondary-color-800: #9e1616;
+    --secondary-color-900: #831919;
+    --secondary-color-950: #470808;
+}
+
+.bg-primary {
+    background-color: var(--primary-color-500);
+}
+
+.bg-primary-400 {
+    background-color: var(--primary-color-400);
+}
+
+.bg-primary-300 {
+    background-color: var(--primary-color-300);
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.hover\:bg-primary:hover {
+    background-color: var(--primary-color-500);
+}
+
+.hover\:bg-primary-500:hover {
+    background-color: var(--primary-color-500);
+}
+
+.hover\:bg-primary-600:hover {
+    background-color: var(--primary-color-600);
+}
+
+.hover\:bg-primary-700:hover {
+    background-color: var(--primary-color-700);
+}

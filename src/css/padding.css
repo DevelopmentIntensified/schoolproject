@@ -1,0 +1,9 @@
+@import "measurements.css";
+
+.p-2 {
+    padding: var(--2);
+}
+
+.p-1 {
+    padding: var(--1);
+}

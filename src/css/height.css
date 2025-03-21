@@ -1,0 +1,17 @@
+@include "height.css";
+
+.h-full {
+    height: 100%;
+}
+
+.h-24 {
+    height: var(--24);
+}
+
+.h-12 {
+    height: var(--12);
+}
+
+.h-5 {
+    height: var(--5);
+}

@@ -1,0 +1,37 @@
+@import "colors.css";
+@import "margin.css";
+@import "padding.css";
+@import "measurements.css";
+@import "height.css";
+@import "display.css";
+@import "position.css";
+@import "width.css";
+@import "text.css";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #4465c6;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
