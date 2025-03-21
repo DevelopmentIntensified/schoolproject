@@ -11,7 +11,7 @@ $links = array(
     array("/week6database","Module 6: Week 6 Database"),
     array("/week8cmsdatabase","Module 8: Week 8 CMS Database"),
 );
-    for ($link=0;$link<=count($links);$link += 1) { 
+    for ($link=0;$link<=count($links) - 1;$link += 1) { 
         echo "<a class='p-2 h-full text-black' href='".$links[$link][0]."'>".explode(":", $links[$link][1])[1]."</a>";
     }
 ?>
