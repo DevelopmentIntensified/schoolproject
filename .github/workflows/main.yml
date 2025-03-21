@@ -12,5 +12,5 @@ jobs:
         host: ftp://4606679@f27-preview.runhosting.com/
         user: "4606679"
         password: ${{ secrets.FTP_PASSWORD }}
-        serverDir: /home/www/schoolproject2.atwebpages.com
+        remoteDir: /home/www/schoolproject2.atwebpages.com
         localDir: ./
