@@ -9,7 +9,7 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-    <?php echo $content ?>
+    <?php echo $contents; ?>
 
     <?php include './src/components/footer.php'; ?>
 
