@@ -1,11 +1,12 @@
 @import "colors.css";
-@import "margin.css";
-@import "padding.css";
 @import "measurements.css";
+@import "margin.css";
+@import "fonts.css";
+@import "padding.css";
 @import "height.css";
+@import "width.css";
 @import "display.css";
 @import "position.css";
-@import "width.css";
 @import "text.css";
 
 body, html {
@@ -34,4 +35,8 @@ a {
 
 .overflow-y-hidden {
     overflow-y: hidden;
+}
+
+.border-none {
+    border: none;
 }

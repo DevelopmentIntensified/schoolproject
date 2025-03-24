@@ -1,0 +1,13 @@
+@import "measurements.css";
+
+.font-inherit{
+    font-family: inherit;
+}
+
+.font-serif{
+    font-family: serif;
+}
+
+.font-12{
+    font-size: 12px;
+}
