@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="us">
 
 <head>
     <title>School Project</title>
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/index.css">
 
-    <head />
+</head>
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
 week 4 sessions 
     <?php include './src/components/footer.php'; ?>
 
-    <body />
-    <html />
+</body>
+</html>

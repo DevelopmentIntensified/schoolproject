@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="us">
 
 <head>
     <title>School Project</title>
@@ -16,5 +16,5 @@
 
     <?php include './src/components/footer.php'; ?>
 
-    <body />
-    <html />
+    </body>
+    </html>

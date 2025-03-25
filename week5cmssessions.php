@@ -3,7 +3,7 @@
 
 <head>
     <title>School Project</title>
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/index.css">
 
     <head />
 

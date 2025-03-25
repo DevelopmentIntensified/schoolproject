@@ -1,4 +1,4 @@
-@import "measurements.css";
+
 .absolute{
     position: absolute;
 }
@@ -20,17 +20,17 @@
 }
 
 .top-8{
-    top: var(--8);
+    top: 2rem;
 }
 
 .top-12{
-    top: var(--12);
+    top: 3rem;
 }
 
 .top-5{
-    top: var(--5);
+    top: 1.25rem;
 }
 
 .left-24{
-    left: var(--24);
+    left: 6rem;
 }

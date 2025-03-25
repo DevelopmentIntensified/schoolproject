@@ -1,17 +1,15 @@
-@import "measurements.css";
-
 .h-full {
     height: 100%;
 }
 
 .h-24 {
-    height: var(--24);
+    height: 6rem;
 }
 
 .h-12 {
-    height: var(--12);
+    height: 3rem;
 }
 
 .h-5 {
-    height: var(--5);
+    height: 1.25rem;
 }

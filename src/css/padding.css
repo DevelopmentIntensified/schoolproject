@@ -1,13 +1,13 @@
-@import "measurements.css";
+
 
 .p-2 {
-    padding: var(--2);
+    padding: 0.5rem;
 }
 
 .p-1 {
-    padding: var(--1);
+    padding: 0.25rem;
 }
 
 .p-12 {
-    padding: var(--12)
+    padding: 3rem;
 }
