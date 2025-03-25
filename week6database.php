@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
     <title>School Project</title>
@@ -19,4 +19,5 @@
 
 
 </body>
+
 </html>

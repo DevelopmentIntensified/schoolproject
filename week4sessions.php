@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="us">
+<html lang="en-US">
 
 <head>
     <title>School Project</title>
@@ -14,8 +14,9 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-week 4 sessions 
+    week 4 sessions
     <?php include './src/components/footer.php'; ?>
 
 </body>
+
 </html>

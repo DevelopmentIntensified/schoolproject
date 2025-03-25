@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="us">
+<html lang="en-US">
 
 <head>
     <title>School Project</title>
@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="author" content="Development Intensified">
-    <link rel="stylesheet" href="./src/css/index.css" >
+    <link rel="stylesheet" href="./src/css/index.css">
 </head>
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-week 2 forms 
+    week 2 forms
     <?php include './src/components/footer.php'; ?>
 
 </body>
+
 </html>

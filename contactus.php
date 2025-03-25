@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="us">
+<html lang="en-US">
 
 <head>
     <title>School Project</title>
@@ -18,7 +18,7 @@
         <h1>Ready To Imagine Your Business?</h1>
         <div>
             <?php
-                    echo "
+            echo "
                     Our Phone number is: 555-555-5555
                     Our Email is: test@thecompany.com
                     " ?>
@@ -27,5 +27,6 @@
 
     <?php include './src/components/footer.php'; ?>
 
-    </body>
-    </html>
+</body>
+
+</html>

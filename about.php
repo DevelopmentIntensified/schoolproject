@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="us">
+<html lang="en-US">
 
 <head>
     <title>School Project</title>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="author" content="Development Intensified">
-    <link rel="stylesheet" href="./src/css/index.css" >
+    <link rel="stylesheet" href="./src/css/index.css">
 </head>
 
 <body class="m-0">
@@ -24,7 +24,7 @@
                     We originally started creating software in 2022, and have created software for small buisnesses since then.";
 
             ?>
-                    <br></br>
+            <br></br>
             <?php
 
             echo "If you want to work with us, there are a few things you should know. We are firm Christians and will not create software that goes against our beliefs. We are looking forward to work with you.";
@@ -36,4 +36,5 @@
     <?php include './src/components/footer.php'; ?>
 
 </body>
+
 </html>
