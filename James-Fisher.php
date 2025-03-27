@@ -16,10 +16,12 @@
     <div class="p-12">
         <?php
             include './src/components/variables.php';
-            echo "<h1>" . $Employees[2][0] . " " . $Employees[2][1] . "</h1>";
-            echo "<h2>Job Title: " . $Employees[2][2] . "</h2>";
-            echo "<h2>Favorite Color: " . $Employees[2][3] . "</h2>";
-            echo "<img src='" . $Employees[2][5] . "' alt='" . $Employees[2][0] . " " . $Employees[2][1] . "' width='300' height='400'>";
+            echo "<h1>" . $Employees[1][0] . " " . $Employees[1][1] . "</h1>";
+            echo "<h2>Job Title: " . $Employees[1][2] . "</h2>";
+            echo "<h2>Favorite Color: " . $Employees[1][3] . "</h2>";
+            echo "<h2>Favorite Book: " . $Employees[1][6] . "</h2>";
+            echo "<h2>Hobby: " . $Employees[1][7] . "</h2>";
+            echo "<img src='" . $Employees[1][5] . "' alt='" . $Employees[1][0] . " " . $Employees[1][1] . "' width='300' height='400'>";
         ?>
     </div>
 

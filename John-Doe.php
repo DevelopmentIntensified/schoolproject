@@ -19,6 +19,8 @@
             echo "<h1>" . $Employees[0][0] . " " . $Employees[0][1] . "</h1>";
             echo "<h2>Job Title: " . $Employees[0][2] . "</h2>";
             echo "<h2>Favorite Color: " . $Employees[0][3] . "</h2>";
+            echo "<h2>Favorite Book: " . $Employees[0][6] . "</h2>";
+            echo "<h2>Hobby: " . $Employees[0][7] . "</h2>";
             echo "<img src='" . $Employees[0][5] . "' alt='" . $Employees[0][0] . " " . $Employees[0][1] . "' width='300' height='400'>";
         ?>
     </div>

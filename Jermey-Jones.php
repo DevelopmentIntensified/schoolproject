@@ -8,22 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="author" content="Development Intensified">
-    <link rel="stylesheet" href="../src/css/index.css">
+    <link rel="stylesheet" href="./src/css/index.css">
 </head>
 
 <body class="m-0">
-    <?php include '../src/components/navbar.php'; ?>
+    <?php include './src/components/navbar.php'; ?>
     <div class="p-12">
         <?php
-            include '../src/components/variables.php';
+            include './src/components/variables.php';
             echo "<h1>" . $Employees[2][0] . " " . $Employees[2][1] . "</h1>";
             echo "<h2>Job Title: " . $Employees[2][2] . "</h2>";
             echo "<h2>Favorite Color: " . $Employees[2][3] . "</h2>";
+            echo "<h2>Favorite Book: " . $Employees[2][6] . "</h2>";
+            echo "<h2>Hobby: " . $Employees[2][7] . "</h2>";
             echo "<img src='" . $Employees[2][5] . "' alt='" . $Employees[2][0] . " " . $Employees[2][1] . "' width='300' height='400'>";
         ?>
     </div>
 
-    <?php include '../src/components/footer.php'; ?>
+    <?php include './src/components/footer.php'; ?>
 
 </body>
 
