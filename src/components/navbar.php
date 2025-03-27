@@ -26,7 +26,7 @@
         <a class="p-2 h-full text-black font-12" href="./contactus.php">Contact Us</a>
         <div class="p-2 inline">
             <button onclick="openMenu()" id="menu-button" class="font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
-                Weekly Exercizes <span class="font-bold">V</span>
+                Weekly Exercises <span class="font-bold">V</span>
             </button>
             <div id="menu" class="hidden absolute top-12 left-24 w-12 flex-col">
                 <?php

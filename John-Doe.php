@@ -13,24 +13,14 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-
     <div class="p-12">
-        <h1>
-            About Us
-        </h1>
-        <p>
-            <?php
-            echo "We are a small company based in Lynchburg Virginia that creates software for local businesses.
-                    We originally started creating software in 2022, and have created software for small businesses since then.";
-
-            ?>
-            <br></br>
-            <?php
-
-            echo "If you want to work with us, there are a few things you should know. We are firm Christians and will not create software that goes against our beliefs. We are looking forward to work with you.";
-            ?>
-        </p>
-
+        <?php
+            include './src/components/variables.php';
+            echo "<h1>" . $Employees[0][0] . " " . $Employees[0][1] . "</h1>";
+            echo "<h2>Job Title: " . $Employees[0][2] . "</h2>";
+            echo "<h2>Favorite Color: " . $Employees[0][3] . "</h2>";
+            echo "<img src='" . $Employees[0][5] . "' alt='" . $Employees[0][0] . " " . $Employees[0][1] . "' width='300' height='400'>";
+        ?>
     </div>
 
     <?php include './src/components/footer.php'; ?>
