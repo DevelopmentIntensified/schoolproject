@@ -22,3 +22,9 @@
 </body>
 
 </html>
+
+<?php
+$request = parse_url($_SERVER[‘REQUEST_URI‘], PHP_URL_PATH);
+fwrite(STDERR, "DEBUGPRINT[34]: index.php:27: request=$request\n");
+
+?>
