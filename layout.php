@@ -3,7 +3,7 @@
 
 <head>
     <title>
-            School Project
+        School Project
     </title>
     <meta name="description" content="This is the website for a company that create websites for small buisnesses">
     <meta name="keywords" content="School, Website, Developer, small, business">
@@ -15,7 +15,9 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-
+    <?php
+    echo "<h1>" . $pageContent . "</h1>";
+    ?>
     <?php include($pageContent); ?>
 
     <?php include './src/components/footer.php'; ?>
