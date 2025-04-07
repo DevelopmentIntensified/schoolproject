@@ -21,9 +21,9 @@
 <nav class="flex gap-2 w-full bg-primary-400 h-8 m-0 p-2 overflow-hidden font-serif">
     <div class="flex-1">
         <a class="p-2 h-full text-black font-12" href="./">Home</a>
-        <a class="p-2 h-full text-black font-12" href="./about.php">About</a>
-        <a class="p-2 h-full text-black font-12" href="./info.php">Info</a>
-        <a class="p-2 h-full text-black font-12" href="./contactus.php">Contact Us</a>
+        <a class="p-2 h-full text-black font-12" href="./about">About</a>
+        <a class="p-2 h-full text-black font-12" href="./info">Info</a>
+        <a class="p-2 h-full text-black font-12" href="./contactus">Contact Us</a>
         <div class="p-2 inline">
             <button onclick="openMenu()" id="menu-button" class="font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
                 Weekly Exercises <span class="font-bold">V</span>
