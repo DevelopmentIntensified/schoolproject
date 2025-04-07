@@ -31,8 +31,7 @@
             <div id="menu" class="hidden absolute top-12 left-24 w-12 flex-col">
                 <?php
                 $links = array(
-                    array("./week1foundations.php", "Module 1: Week 1 Foundations"),
-                    array("./week1variables.php", "Module 1: Week 1 Variables"),
+                    array("./employees", "Employees"),
                     array("./week2forms.php", "Module 2: Week 2 Forms"),
                     array("./week3arrays.php", "Module 3: Week 3 Arrays"),
                     array("./week4sessions.php", "Module 4: Week 4 Sessions"),

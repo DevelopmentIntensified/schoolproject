@@ -9,4 +9,3 @@ if (array_key_exists(str_replace("/schoolproject", "", $_SERVER['REQUEST_URI']),
 };
 
 include "layout.php";
-?>
