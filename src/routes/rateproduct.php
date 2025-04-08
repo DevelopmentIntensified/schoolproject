@@ -1,7 +1,9 @@
 <?php
-$method = $_GET["method"];
-if ($method != "get" && $method != "post") {
-    $method = "get";
+if (isset($_GET["method"])) {
+    $method = $_GET["method"];
+    if ($method != "get" && $method != "post") {
+        $method = "get";
+    }
 }
 include "./src/components/products.php";
 ?>
