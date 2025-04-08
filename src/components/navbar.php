@@ -28,11 +28,11 @@
             <button onclick="openMenu()" id="menu-button" class="font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
                 Weekly Exercises <span class="font-bold">V</span>
             </button>
-            <div id="menu" class="hidden absolute top-12 left-24 w-12 flex-col">
+            <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
                 <?php
                 $links = array(
-                    array("./employees", "Employees"),
-                    array("./week2forms.php", "Module 2: Week 2 Forms"),
+                    array("./employees", ":Employees"),
+                    array("./productrating", "Module 2:Week 2 Product Rating"),
                     array("./week3arrays.php", "Module 3: Week 3 Arrays"),
                     array("./week4sessions.php", "Module 4: Week 4 Sessions"),
                     array("./week5cmssessions.php", "Module 5: Week 5 CMS Sessions"),

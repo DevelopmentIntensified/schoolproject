@@ -36,6 +36,9 @@ a {
     overflow-y: hidden;
 }
 
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
 .border-none {
     border: none;
 }

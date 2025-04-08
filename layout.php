@@ -15,9 +15,6 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-    <?php
-    echo "<h1>" . $pageContent . "</h1>";
-    ?>
     <?php include($pageContent); ?>
 
     <?php include './src/components/footer.php'; ?>

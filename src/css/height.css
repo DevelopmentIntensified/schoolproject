@@ -17,3 +17,15 @@
 .h-5 {
     height: 1.25rem;
 }
+
+.h-128 {
+    height: 32rem;
+}
+
+.h-256 {
+    height: 64rem;
+}
+
+.h-80vh {
+    height: 80vh;
+}
