@@ -28,8 +28,11 @@ include "./src/components/products.php";
 <div class='p-8 <?php if (isset($_POST["name"]) || isset($_GET["name"])) {
                     echo "block";
                 } else echo "hidden"; ?>'>
-    <h1>Thank You <?php echo $_POST["name"] ?> For Your Feedback!</h1>
-    <h3>Comment: <?php echo $_POST["comment"]; ?></h3>
+    <h1>Thank You <?php if (isset($_POST["name"])) echo $_POST["name"];
+                    else echo $_GET["name"]; ?> For Your Feedback!</h1>
+    <h3>Comment: <?php if (isset($_POST["comment"])) echo $_POST["comment"];
+                    else echo $_GET["comment"];
+                    ?></h3>
 
     <table class="m-2 p-2 rounded">
         <tr>
