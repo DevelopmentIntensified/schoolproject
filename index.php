@@ -9,11 +9,11 @@ include "routes.php";
 // echo "<br />";
 // echo json_encode($routes);
 
-if (strpos($_SERVER['REQUEST_URI'], "rateproduct")) {
+if (strpos(str_replace("/schoolproject", "",$_SERVER['REQUEST_URI']), "rateproduct")) {
     $pageContent = "./src/routes/rateproduct.php";
 }
 
-if (strpos($_SERVER['REQUEST_URI'], "employee?")) {
+if (strpos(str_replace("/schoolproject", "",$_SERVER['REQUEST_URI']), "employee?")) {
     $pageContent = "./src/routes/employee.php";
 }
 
