@@ -7,6 +7,7 @@ $routes = [
     '/contactus' => './src/routes/contactus.php',
     '/info' => './src/routes/info.php',
     '/employees' => './src/routes/employees.php',
+    '/editemployees' => './src/routes/editemployees.php',
     '/productrating' => './src/routes/productRatings.php',
 ];
 for ($i = 0; $i < count($Employees); $i++) {

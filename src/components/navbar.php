@@ -33,7 +33,7 @@
                 $links = array(
                     array("./employees", ":Employees"),
                     array("./productrating", "Module 2:Week 2 Product Rating"),
-                    array("./week3arrays.php", "Module 3: Week 3 Arrays"),
+                    array("./editemployees", "Module 3: Week 3 Edit Employees"),
                     array("./week4sessions.php", "Module 4: Week 4 Sessions"),
                     array("./week5cmssessions.php", "Module 5: Week 5 CMS Sessions"),
                     array("./week6database.php", "Module 6: Week 6 Database"),
