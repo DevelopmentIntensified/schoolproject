@@ -6,17 +6,20 @@ $routes = [
     '/about' => 'src/routes/about.php',
     '/contactus' => './src/routes/contactus.php',
     '/info' => './src/routes/info.php',
-    '/employmentchart' => './src/routes/employees.php',
-    '/editemployees' => './src/routes/editemployees.php',
     '/productrating' => './src/routes/productRatings.php',
+    '/logout' => './src/routes/logout.php',
+    '/login' => './src/routes/login.php',
 ];
 
-for ($i = 0; $i < count($Employees); $i++) {
-    $routes['/employee?id=' . $i] = './src/routes/employee.php';
-};
+if (isset($_SESSION['username'])) {
+    $routes['/editemployees'] = './src/routes/editemployees.php';
+    $routes['/employmentchart'] = './src/routes/employees.php';
+    for ($i = 0; $i < count($Employees); $i++) {
+        $routes['/employee?id=' . $i] = './src/routes/employee.php';
+    };
+}
+
 
 foreach ($products as $productName => $product) {
     $routes['/rateproduct?id=' . rawurlencode($productName)] = './src/routes/rateproduct.php';
 };
-
-?>

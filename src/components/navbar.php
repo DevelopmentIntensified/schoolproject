@@ -30,15 +30,23 @@
             </button>
             <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
                 <?php
-                $links = array(
-                    array("./employmentchart", "Module 1:Week 1 Employees"),
-                    array("./productrating", "Module 2:Week 2 Product Rating"),
-                    array("./editemployees", "Module 3: Week 3 Edit Employees"),
-                    array("./week4sessions.php", "Module 4: Week 4 Sessions"),
-                    array("./week5cmssessions.php", "Module 5: Week 5 CMS Sessions"),
-                    array("./week6database.php", "Module 6: Week 6 Database"),
-                    array("./week8cmsdatabase.php", "Module 8: Week 8 CMS Database"),
-                );
+                if (isset($_SESSION['username'])) {
+                    $links = array(
+                        array("./employmentchart", "Module 1:Week 1 Employees"),
+                        array("./productrating", "Module 2:Week 2 Product Rating"),
+                        array("./editemployees", "Module 3: Week 3 Edit Employees"),
+                        array("./week5cmssessions.php", "Module 5: Week 5 CMS Sessions"),
+                        array("./week6database.php", "Module 6: Week 6 Database"),
+                        array("./week8cmsdatabase.php", "Module 8: Week 8 CMS Database"),
+                    );
+                } else {
+                    $links = array(
+                        array("./productrating", "Module 2:Week 2 Product Rating"),
+                        array("./week5cmssessions.php", "Module 5: Week 5 CMS Sessions"),
+                        array("./week6database.php", "Module 6: Week 6 Database"),
+                        array("./week8cmsdatabase.php", "Module 8: Week 8 CMS Database"),
+                    );
+                }
 
                 for ($link = 0; $link <= count($links) - 1; $link += 1) {
                     echo "<a class='p-2 flex-1 bg-primary-400 w-full h-6 text-black font-inherit' href='" . $links[$link][0] . "'>" . explode(":", $links[$link][1])[1] . "</a>";
@@ -46,5 +54,12 @@
                 ?>
             </div>
         </div>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo "<a class='p-2 h-full text-black font-12 absolute right-0' href='./logout'>Logout</a>";
+        } else {
+            echo "<a class='p-2 h-full text-black font-12 absolute right-0' href='./login'>Login</a>";
+        }
+        ?>
     </div>
 </nav>
