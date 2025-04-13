@@ -15,7 +15,9 @@
 
 <body class="m-0">
     <?php include './src/components/navbar.php'; ?>
-    <?php include($pageContent); ?>
+    <div class="p-2">
+        <?php include($pageContent); ?>
+    </div>
 
     <?php include './src/components/footer.php'; ?>
 
