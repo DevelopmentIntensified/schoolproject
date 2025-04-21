@@ -14,12 +14,12 @@
 </head>
 
 <body class="m-0">
-    <?php include './src/components/navbar.php'; ?>
+    <?php include './src/components/Header.php'; ?>
     <div class="p-2">
         <?php include($pageContent); ?>
     </div>
 
-    <?php include './src/components/footer.php'; ?>
+    <?php include './src/components/Footer.php'; ?>
 
 </body>
 

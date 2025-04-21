@@ -9,11 +9,13 @@ $routes = [
     '/productrating' => './src/routes/productRatings.php',
     '/logout' => './src/routes/logout.php',
     '/login' => './src/routes/login.php',
+    '/mission' => './src/routes/mission.php',
+    '/ourteam' => './src/routes/employees.php'
 ];
+
 
 if (isset($_SESSION['username'])) {
     $routes['/editemployees'] = './src/routes/editemployees.php';
-    $routes['/employmentchart'] = './src/routes/employees.php';
     for ($i = 0; $i < count($Employees); $i++) {
         $routes['/employee?id=' . $i] = './src/routes/employee.php';
     };

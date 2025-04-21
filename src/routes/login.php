@@ -3,19 +3,21 @@
 $error = "";
 $users = [
     "customer" => "customer",
+    "admin" => "admin",
+    "publisher" => "publisher"
 ];
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    echo $password;
-    echo $username;
+    $email = $_POST['email'];
 
     if (array_key_exists($username, $users) && $users[$username] == $password) {
         $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
         header("Location: ./");
     } else {
-        $error = "Invalid username or password";
+        $error = "Invalid username or email or password";
     }
 }
 ?>
@@ -27,6 +29,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <form action="./login" method="post">
         <label for="username">Username:</label>
         <input class="bg-primary rounded text-white p-2" type="text" name="username" id="username" required>
+
+        <label for="email">Email:</label>
+        <input class="bg-primary rounded text-white p-2" type="email" name="email" id="email" required>
 
         <label for="password">Password:</label>
         <input class="bg-primary rounded text-white p-2" type="password" name="password" id="password" required>

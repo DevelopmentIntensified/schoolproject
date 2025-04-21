@@ -1,13 +1,68 @@
-@import "colors.css";
-@import "margin.css";
-@import "font.css";
-@import "padding.css";
-@import "height.css";
-@import "width.css";
-@import "display.css";
-@import "position.css";
-@import "text.css";
+:root {
+    /* color picker: https://uicolors.app/generate/2f6bd7-c51616 */
+    --primary-color-50: #f0f7fe;
+    --primary-color-100: #deebfb;
+    --primary-color-200: #c5def8;
+    --primary-color-300: #9dcaf3;
+    --primary-color-400: #6eacec;
+    --primary-color-500: #4c8de5;
+    --primary-color-600: #2f6bd7;
+    --primary-color-700: #2e5dc7;
+    --primary-color-800: #2b4ca2;
+    --primary-color-900: #284380;
+    --primary-color-950: #1d2a4e;
+    --secondary-color-50: #fff1f1;
+    --secondary-color-100: #ffe1e1;
+    --secondary-color-200: #ffc8c8;
+    --secondary-color-300: #ffa1a1;
+    --secondary-color-400: #fe6b6b;
+    --secondary-color-500: #f63d3d;
+    --secondary-color-600: #e41e1e;
+    --secondary-color-700: #c51616;
+    --secondary-color-800: #9e1616;
+    --secondary-color-900: #831919;
+    --secondary-color-950: #470808;
+}
 
+.bg-primary {
+    background-color: var(--primary-color-500);
+}
+
+.bg-primary-400 {
+    background-color: var(--primary-color-400);
+}
+
+.bg-primary-300 {
+    background-color: var(--primary-color-300);
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.hover\:bg-primary:hover {
+    background-color: var(--primary-color-500);
+}
+
+.hover\:bg-primary-500:hover {
+    background-color: var(--primary-color-500);
+}
+
+.hover\:bg-primary-600:hover {
+    background-color: var(--primary-color-600);
+}
+
+.hover\:bg-primary-700:hover {
+    background-color: var(--primary-color-700);
+}
+
+.text-red {
+    color: red;
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -41,4 +96,199 @@ a {
 }
 .border-none {
     border: none;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
+}
+
+.fixed{
+    position: fixed;
+}
+
+.bottom-0{
+    bottom: 0px;
+}
+
+.bottom-5{
+    bottom: 1.25rem;
+}
+
+.left-0{
+    left: 0px;
+}
+
+.top-8{
+    top: 2rem;
+}
+
+.top-12{
+    top: 3rem;
+}
+
+.top-5{
+    top: 1.25rem;
+}
+
+.left-24{
+    left: 6rem;
+}
+
+.left-32{
+    left: 8rem;
+}
+
+.right-0{
+    right: 0px;
+}
+
+.hidden{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.inline{
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.grid{
+    display: grid;
+}
+
+.grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-2{
+    gap: 0.5rem;
+}
+
+.gap-4{
+    gap: 1rem;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.h-24 {
+    height: 6rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.h-128 {
+    height: 32rem;
+}
+
+.h-256 {
+    height: 64rem;
+}
+
+.h-80vh {
+    height: 80vh;
+}
+
+.font-inherit{
+    font-family: inherit;
+}
+
+.font-serif{
+    font-family: serif;
+}
+
+.font-12{
+    font-size: 12px;
+}
+
+.font-18{
+    font-size: 18px;
+}
+
+.font-24{
+    font-size: 24px;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+.m-0 {
+    margin: 0px;
+}
+.m-2 {
+    margin: 0.5rem;
+}
+
+.m-8 {
+    margin: 2rem;
+}
+
+.m-12 {
+    margin: 3rem;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-1 {
+    padding: 0.25rem;
+}
+
+.p-12 {
+    padding: 3rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.w-16 {
+    width: 4rem;
 }
