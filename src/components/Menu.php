@@ -20,15 +20,22 @@
 
 <div class="p-2 inline">
     <button onclick="openMenu()" id="menu-button" class="font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
-        Weekly Exercises <span class="font-bold">V</span>
+        More <span class="font-bold">V</span>
     </button>
     <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
         <?php
-        if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
             $links = array(
                 array("./ourteam", "Our Team"),
                 array("./productrating", "Product Rating"),
                 array("./editemployees", "Edit Our Team"),
+                array("./shop", "Shop"),
+            );
+        } else if (isset($_SESSION['username'])) {
+            $links = array(
+                array("./ourteam", "Our Team"),
+                array("./productrating", "Product Rating"),
+                array("./shop", "Shop"),
             );
         } else {
             $links = array(
@@ -38,7 +45,7 @@
         }
 
         for ($link = 0; $link <= count($links) - 1; $link += 1) {
-            echo "<a class='p-2 flex-1 bg-primary-400 w-full h-6 text-black font-inherit' href='" . $links[$link][0] . "'>" . explode(":", $links[$link][1])[1] . "</a>";
+            echo "<a class='p-2 flex-1 bg-primary-400 w-full h-6 text-black font-inherit' href='" . $links[$link][0] . "'>" . $links[$link][1] . "</a>";
         }
         ?>
     </div>

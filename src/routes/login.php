@@ -10,6 +10,7 @@ $users = [
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $age = $_POST['age'];
     $email = $_POST['email'];
 
     if (array_key_exists($username, $users) && $users[$username] == $password) {
@@ -28,13 +29,23 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
     <h5 class="text-center text-red"><?php echo $error; ?></h5>
     <form action="./login" method="post">
         <label for="username">Username:</label>
+        <br></br>
         <input class="bg-primary rounded text-white p-2" type="text" name="username" id="username" required>
-
+        <br></br>
         <label for="email">Email:</label>
+        <br></br>
         <input class="bg-primary rounded text-white p-2" type="email" name="email" id="email" required>
 
+        <br></br>
+        <label for="age">Age:</label>
+        <br></br>
+        <input class="bg-primary rounded text-white p-2" type="number" name="age" id="age" required>
+        <br></br>
+
         <label for="password">Password:</label>
+        <br></br>
         <input class="bg-primary rounded text-white p-2" type="password" name="password" id="password" required>
+        <br></br>
 
         <input class="bg-primary rounded text-white p-2" type="submit" value="Login">
     </form>

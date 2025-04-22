@@ -150,6 +150,10 @@ a {
     right: 0px;
 }
 
+.right-8{
+    right: 2rem;
+}
+
 .hidden{
     display: none;
 }
@@ -259,6 +263,18 @@ a {
 
 .m-12 {
     margin: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem;
 }
 
 .p-2 {
