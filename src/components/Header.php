@@ -6,11 +6,11 @@
         <a class="p-2 h-full text-black font-12" href="./mission">Mission</a>
         <a class="p-2 h-full text-black font-12" href="./info">Site Info</a>
         <a class="p-2 h-full text-black font-12" href="./contactus">Contact Us</a>
+        <a class='p-2 h-full text-black font-12' href='./cart'>Cart</a>
         <?php
         include "src/components/Menu.php";
         if (isset($_SESSION['username'])) {
         echo "
-        <a class='p-2 h-full text-black font-12' href='./cart'>Cart</a>
         <a class='p-2 h-full text-black font-12 absolute right-0' href='./logout'>Logout</a>
         ";
 

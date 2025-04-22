@@ -31,14 +31,9 @@
                 array("./editemployees", "Edit Our Team"),
                 array("./shop", "Shop"),
             );
-        } else if (isset($_SESSION['username'])) {
-            $links = array(
-                array("./ourteam", "Our Team"),
-                array("./productrating", "Product Rating"),
-                array("./shop", "Shop"),
-            );
         } else {
             $links = array(
+                array("./shop", "Shop"),
                 array("./ourteam", "Our Team"),
                 array("./productrating", "Product Rating"),
             );

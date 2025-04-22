@@ -13,14 +13,14 @@ $routes = [
     '/ourteam' => './src/routes/employees.php',
 ];
 
+$routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';
+$routes['/cart'] = './src/routes/cart.php';
+$routes['/shop'] = './src/routes/shop.php';
+$routes['/checkout'] = './src/routes/checkout.php';
+$routes['/removefromcart'] = './src/routes/removefromcart.php';
+$routes['/clearcart'] = './src/routes/clearcart.php';
 
 if (isset($_SESSION['username'])) {
-    $routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';
-    $routes['/cart'] = './src/routes/cart.php';
-    $routes['/shop'] = './src/routes/shop.php';
-    $routes['/checkout'] = './src/routes/checkout.php';
-    $routes['/removefromcart'] = './src/routes/removefromcart.php';
-    $routes['/clearcart'] = './src/routes/clearcart.php';
     if ($_SESSION["username"] == "admin") {
         $routes['/editemployees'] = './src/routes/editemployees.php';
     }
