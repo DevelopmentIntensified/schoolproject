@@ -1,5 +1,5 @@
 <?php
-$servername = "fdb1027.runhosting.com";
+$servername = "https://fdb1027.runhosting.com";
 $username = "4606679_schoolproject";
 $password = "4jJ_@}l?6M:#DBnK";
 
