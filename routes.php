@@ -11,6 +11,7 @@ $routes = [
     '/login' => './src/routes/login.php',
     '/mission' => './src/routes/mission.php',
     '/ourteam' => './src/routes/employees.php',
+    '/comments' => './src/routes/comments.php',
 ];
 
 $routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';

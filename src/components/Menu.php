@@ -30,9 +30,11 @@
                 array("./productrating", "Product Rating"),
                 array("./editemployees", "Edit Our Team"),
                 array("./shop", "Shop"),
+                array("./comments", "Comments"),
             );
         } else {
             $links = array(
+                array("./comments", "Comments"),
                 array("./shop", "Shop"),
                 array("./ourteam", "Our Team"),
                 array("./productrating", "Product Rating"),
