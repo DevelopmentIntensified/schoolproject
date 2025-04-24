@@ -11,7 +11,6 @@ $routes = [
     '/login' => './src/routes/login.php',
     '/mission' => './src/routes/mission.php',
     '/ourteam' => './src/routes/employees.php',
-    '/comments' => './src/routes/comments.php',
 ];
 
 $routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';
@@ -20,6 +19,7 @@ $routes['/shop'] = './src/routes/shop.php';
 $routes['/checkout'] = './src/routes/checkout.php';
 $routes['/removefromcart'] = './src/routes/removefromcart.php';
 $routes['/clearcart'] = './src/routes/clearcart.php';
+$routes['/createcomment'] = './src/routes/createcomment.php';
 
 if (isset($_SESSION['username'])) {
     if ($_SESSION["username"] == "admin") {

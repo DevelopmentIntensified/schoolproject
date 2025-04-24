@@ -8,3 +8,4 @@
     }
     ?>
 </div>
+<?php include './src/components/comments.php'; ?>
