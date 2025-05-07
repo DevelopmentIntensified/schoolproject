@@ -1,8 +1,8 @@
 <div class="p-2 w-full">
     <h1>Comments</h1>
-    <div class="w-full">
+<div class="w-full <?php if (!isset($_SESSION['username'])) {echo "hidden";} ?>">
         <form class="flex w-56 flex-col" action="./createcomment" method="post">
-            <input type="text" required name="username" placeholder="Username">
+            <input type="text" value="<?php echo $_SESSION['username']; ?>" name="username" placeholder="Username">
             <input type="text" required name="title" placeholder="Title">
             <input type="text" required name="comment" placeholder="Comment">
             <button type="submit">Submit</button>
@@ -26,8 +26,5 @@
     } else {
         echo "There have been no comments yet.";
     }
-
-
-    mysqli_close($conn);
     ?>
 </div>

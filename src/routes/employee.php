@@ -1,24 +1,47 @@
 <?php
-include 'src/components/variables.php';
+include 'src/components/mysqlconnection.php';
 $id = $_GET['id'];
 
-if (isset($_GET["first-name"])) {
-    $Employees[$id][0] = $_GET["first-name"];
-    $Employees[$id][1] = $_GET["last-name"];
-    $Employees[$id][2] = $_GET["job-title"];
-    $Employees[$id][3] = $_GET["favorite-color"];
-    $Employees[$id][6] = $_GET["favorite-book"];
-    $Employees[$id][7] = $_GET["favorite-hobby"];
+if (isset($_GET["first-name"]) && isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher") {
+    $updateEmployeeSql = "update employees 
+    set firstName = '" . $_GET["first-name"] . "',
+    lastName = '" . $_GET["last-name"] . "',
+    jobTitle = '" . $_GET["job-title"] . "',
+    favoriteColor = '" . $_GET["favorite-color"] . "',
+    favoriteBook = '" . $_GET["favorite-book"] . "',
+    hobby = '" . $_GET["favorite-hobby"] . "'
+    where id = " . $id;
+
+    if (mysqli_query($conn, $updateEmployeeSql)) {
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }
 
-if (!isset($Employees[$id])) {
+$sql = "SELECT * FROM employees where id = " . $id;
+$result = mysqli_query($conn, $sql);
+if(!$result) {
     echo "<h1>Employee not found</h1>";
     return;
 }
 
-echo "<h1>" . $Employees[$id][0] . " " . $Employees[$id][1] . "</h1>";
-echo "<h2>Job Title: " . $Employees[$id][2] . "</h2>";
-echo "<h2>Favorite Color: " . $Employees[$id][3] . "</h2>";
-echo "<h2>Favorite Book: " . $Employees[$id][6] . "</h2>";
-echo "<h2>Hobby: " . $Employees[$id][7] . "</h2>";
-echo "<img src='" . $Employees[$id][5] . "' alt='" . $Employees[$id][0] . " " . $Employees[$id][1] . "' width='300' height='400'>";
+$Employees = [];
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($Employees, $row);
+    }
+}
+
+echo "<h1>" . $Employees[0]["firstName"] . " " . $Employees[0]["lastName"] . "</h1>";
+echo "<h2>Job Title: " . $Employees[0]["jobTitle"] . "</h2>";
+echo "<h2>Favorite Color: " . $Employees[0]["favoriteColor"] . "</h2>";
+echo "<h2>Favorite Book: " . $Employees[0]["favoritebook"] . "</h2>";
+echo "<h2>Hobby: " . $Employees[0]["hobby"] . "</h2>";
+echo "<img src='./src/images/" . $Employees[0]["image"] . "' alt='" . $Employees[0]["firstName"] . " " . $Employees[0]["lastName"] . "' width='300' height='400'>";
+
+if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "admin") {
+    echo "<form action='./deleteemployee' method='post'>
+    <input type='hidden' name='id' value='" . $Employees[0]["id"] . "'>
+    <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Delete Employee</button>
+    </form>";
+}

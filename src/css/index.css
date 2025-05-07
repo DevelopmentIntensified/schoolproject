@@ -265,6 +265,10 @@ a {
     margin: 3rem;
 }
 
+.mx-auto {
+    margin: 0 auto;
+}
+
 .mb-4 {
     margin-bottom: 1rem;
 }

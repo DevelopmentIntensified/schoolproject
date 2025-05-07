@@ -1,5 +1,6 @@
 <?php
 include './src/components/variables.php';
+include './src/components/mysqlconnection.php';
 ?>
 <div class="p-4">
     <h1>Edit Employees</h1>
@@ -10,13 +11,13 @@ include './src/components/variables.php';
         console.log(Employees);
 
         function loadEmployeeInfo(id) {
-            var employee = Employees[id];
-            document.getElementById("first-name").value = employee[0];
-            document.getElementById("last-name").value = employee[1];
-            document.getElementById("job-title").value = employee[2];
-            document.getElementById("favorite-color").value = employee[3];
-            document.getElementById("favorite-book").value = employee[6];
-            document.getElementById("favorite-hobby").value = employee[7];
+            var employee = Employees[id - 1];
+            document.getElementById("first-name").value = employee["firstName"];
+            document.getElementById("last-name").value = employee["lastName"];
+            document.getElementById("job-title").value = employee["jobTitle"];
+            document.getElementById("favorite-color").value = employee["favoriteColor"];
+            document.getElementById("favorite-book").value = employee["favoritebook"];
+            document.getElementById("favorite-hobby").value = employee["hobby"];
         }
     </script>
 
@@ -27,7 +28,7 @@ include './src/components/variables.php';
                 <option value="">Select Employee</option>
                 <?php
                 foreach ($Employees as $id => $employee) {
-                    echo "<option value='" . $id . "'>" . $employee[0] . " " . $employee[1] . "</option>";
+                    echo "<option value='" . $employee["id"] . "'>" . $employee["firstName"] . " " . $employee["lastName"] . "</option>";
                 };
                 ?>
             </select>

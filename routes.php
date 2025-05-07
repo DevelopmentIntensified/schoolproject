@@ -9,25 +9,38 @@ $routes = [
     '/productrating' => './src/routes/productRatings.php',
     '/logout' => './src/routes/logout.php',
     '/login' => './src/routes/login.php',
+    '/register' => './src/routes/register.php',
     '/mission' => './src/routes/mission.php',
     '/ourteam' => './src/routes/employees.php',
 ];
 
-$routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';
-$routes['/cart'] = './src/routes/cart.php';
-$routes['/shop'] = './src/routes/shop.php';
-$routes['/checkout'] = './src/routes/checkout.php';
-$routes['/removefromcart'] = './src/routes/removefromcart.php';
-$routes['/clearcart'] = './src/routes/clearcart.php';
-$routes['/createcomment'] = './src/routes/createcomment.php';
+for ($i = 0; $i < count($Employees); $i++) {
+    $routes['/employee?id=' . $i] = './src/routes/employee.php';
+};
 
-if (isset($_SESSION['username'])) {
-    if ($_SESSION["username"] == "admin") {
+if (isset($_SESSION['user'])) {
+    $routes['/productaddedtocart'] = './src/routes/productaddedtocart.php';
+    $routes['/cart'] = './src/routes/cart.php';
+    $routes['/shop'] = './src/routes/shop.php';
+    $routes['/checkout'] = './src/routes/checkout.php';
+    $routes['/removefromcart'] = './src/routes/removefromcart.php';
+    $routes['/clearcart'] = './src/routes/clearcart.php';
+    $routes['/createcomment'] = './src/routes/createcomment.php';
+    $routes['/deletecomment'] = './src/routes/deletecomment.php';
+    $routes['/editcomment'] = './src/routes/editcomment.php';
+}
+
+if (isset($_SESSION['user'])) {
+    if ($_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher") {
         $routes['/editemployees'] = './src/routes/editemployees.php';
+        $routes['/createproduct'] = './src/routes/createproduct.php';
+        $routes['/createemployee'] = './src/routes/createemployee.php';
     }
-    for ($i = 0; $i < count($Employees); $i++) {
-        $routes['/employee?id=' . $i] = './src/routes/employee.php';
-    };
+    
+    if($_SESSION["user"]["role"] == "admin") {
+        $routes['/deleteemployee'] = './src/routes/deleteemployee.php';
+        $routes['/deleteproduct'] = './src/routes/deleteproduct.php';
+    }
 }
 
 

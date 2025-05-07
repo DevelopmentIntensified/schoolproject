@@ -19,30 +19,33 @@
 </script>
 
 <div class="p-2 inline">
-    <button onclick="openMenu()" id="menu-button" class="font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
+    <button onclick="openMenu()" id="menu-button" class="<?php if (!isset($_SESSION['user'])) {
+                                                                echo "hidden";
+                                                            } ?> font-serif font-12 bg-primary-400 border-none p-2 h-full text-black font-inherit">
         More <span class="font-bold">V</span>
     </button>
     <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
         <?php
-        if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
+        $links = array();
+        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == "admin") {
             $links = array(
-                array("./ourteam", "Our Team"),
-                array("./productrating", "Product Rating"),
                 array("./editemployees", "Edit Our Team"),
+                array("./productrating", "Product Rating"),
                 array("./shop", "Shop"),
-                array("./comments", "Comments"),
+                array("./Cart", "Cart"),
+            );
+        } else if (isset($_SESSION['user'])) {
+            $links = array(
+                array("./shop", "Shop"),
+                array("./Cart", "Cart"),
             );
         } else {
-            $links = array(
-                array("./comments", "Comments"),
-                array("./shop", "Shop"),
-                array("./ourteam", "Our Team"),
-                array("./productrating", "Product Rating"),
-            );
         }
 
-        for ($link = 0; $link <= count($links) - 1; $link += 1) {
-            echo "<a class='p-2 flex-1 bg-primary-400 w-full h-6 text-black font-inherit' href='" . $links[$link][0] . "'>" . $links[$link][1] . "</a>";
+        if (isset($_SESSION["user"])) {
+            for ($link = 0; $link <= count($links) - 1; $link += 1) {
+                echo "<a class='p-2 flex-1 bg-primary-400 w-full h-6 text-black font-inherit' href='" . $links[$link][0] . "'>" . $links[$link][1] . "</a>";
+            }
         }
         ?>
     </div>

@@ -10,24 +10,56 @@ include "src/components/products.php";
 
     <div class='grid grid-cols-4 gap-4'>
         <?php
+        include "src/components/mysqlconnection.php";
         $cost = 0;
-        if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) !== 0) {
-            foreach ($_SESSION["cart"] as $productName => $productcount) {
+        $sql = "SELECT * FROM cart WHERE user_id = " . $_SESSION["user"]["id"];
+        $cart = [];
+        $result = mysqli_query($conn, $sql);
+
+        if(!$result) {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $cart[$row["product_id"]] = $row;
+            }
+        }
+
+        if (count($cart) > 0) {
+            foreach ($cart as $productId => $productData) {
+                $productSql = "SELECT * FROM products WHERE id = " . $productId;
+                $result = mysqli_query($conn, $productSql);
+
+                if(!$result) {
+                    echo "Error: " . $productSql . "<br>" . mysqli_error($conn);
+                }
+                
+                $product = [];
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $product = $row;
+                    }
+                }
+                $productName = $product["name"];
+                $productcount = $productData["count"];
+                $productcost = $product["price"];
+                
                 if ($productcount > 0) {
-                    $cost += $products[$productName]["price"] * $productcount;
+                    $cost += $productcost * $productcount;
                     echo "
                         <div class='flex flex-col gap-2'>
                             <h2>" . $productName . "</h2>
-                            <img class='w-full' src='./src/images/" . $products[$productName]["image"] . "' />
-                            <span>" . $products[$productName]["description"] . "</span>
-                            <span>Price: $" . ($products[$productName]["price"] * $productcount) . "</span>
+                            <img class='w-full' src='./src/images/" . $product["image"] . "' />
+                            <span>" . $product["description"] . "</span>
+                            <span>Price: $" . ($productcost * $productcount) . "</span>
                             <span>Count: " . $productcount . "</span>
                             <form action='./productaddedtocart' method='post'>
-                                <input type='hidden' name='name' value='" . $productName . "'>
+                                <input type='hidden' name='id' value='" . $product["id"] . "'>
                                 <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Add One</button>
                             </form>
                             <form action='./removefromcart' method='post'>
-                                <input type='hidden' name='name' value='" . $productName . "'>
+                                <input type='hidden' name='id' value='" . $product["id"] . "'>
                                 <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Remove One</button>
                             </form>
                         </div>

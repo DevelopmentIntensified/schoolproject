@@ -14,13 +14,25 @@ include "src/components/products.php";
                 <img class='w-full' width='200' height='200' src='./src/images/" . $product["image"] . "' />
                 <span>" . $product["description"] . "</span>
                 <span>Price: $" . $product["price"] . "</span>
-                <span>Time Required: " . $product["time required"] . " days</span>
+                <span>Time Required: " . $product["timeRequired"] . " days</span>
                 <form action='./productaddedtocart' method='post'>
-                    <input type='hidden' name='name' value='" . $productName . "'>
+                    <input type='hidden' name='id' value='" . $product["id"] . "'>
                     <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Add to Cart</button>
                 </form>
-            </div>
             ";
+            if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "publisher" || $_SESSION["user"]["role"] == "admin") {
+                echo "<form action='./edit' method='post'>
+                    <input type='hidden' name='id' value='" . $product["id"] . "'>
+                    <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Edit Product</button>
+                </form>";
+            }
+            if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "admin") {
+                echo "<form action='./deleteproduct' method='post'>
+                    <input type='hidden' name='id' value='" . $product["id"] . "'>
+                    <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Delete Product</button>
+                </form>";
+            }
+            echo "</div>";
         };
         ?>
 

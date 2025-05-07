@@ -1,15 +1,13 @@
 <?php
-
     include './src/components/mysqlconnection.php';
 
-    $username = $_POST['username'];
-    $title = $_POST['title'];
     $comment = $_POST['comment'];
+    $id = $_POST['id'];
 
-    $sql = "INSERT INTO comments (username, title, comment) VALUES ('$username', '$title', '$comment')";
+    $sql = "UPDATE comments SET comment = '$comment' WHERE id = '$id'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        echo "record updated successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

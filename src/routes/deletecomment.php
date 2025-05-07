@@ -1,15 +1,12 @@
 <?php
-
     include './src/components/mysqlconnection.php';
 
-    $username = $_POST['username'];
-    $title = $_POST['title'];
-    $comment = $_POST['comment'];
+    $id = $_POST['id'];
 
-    $sql = "INSERT INTO comments (username, title, comment) VALUES ('$username', '$title', '$comment')";
+    $sql = "Delete FROM comments WHERE id = '$id'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        echo "record deleted successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
