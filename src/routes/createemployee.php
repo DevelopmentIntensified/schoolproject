@@ -1,8 +1,8 @@
 <?php
-include './src/components/variables.php';
 include './src/components/mysqlconnection.php';
 
 if (isset($_POST["first-name"]) && isset($_POST["last-name"]) && isset($_POST["job-title"]) && isset($_POST["favorite-color"]) && isset($_POST["favorite-book"]) && isset($_POST["favorite-hobby"])) {
+    $rand = rand(1, 100000);
     $insertSql = "INSERT INTO employees (firstName, lastName, jobTitle, favoriteColor, favoriteBook, hobby, image)
     VALUES (
         '" . $_POST["first-name"] . "',
@@ -11,12 +11,12 @@ if (isset($_POST["first-name"]) && isset($_POST["last-name"]) && isset($_POST["j
         '" . $_POST["favorite-color"] . "',
         '" . $_POST["favorite-book"] . "',
         '" . $_POST["favorite-hobby"] . "',
-        '" . $_POST["first-name"] . $_POST["last-name"] . rand(1, 100000) . basename($_FILES["image"]["name"]) . "'
+        '" . $_POST["first-name"] . $_POST["last-name"] . $rand . basename($_FILES["image"]["name"]) . "'
     )";
 
     $allGood = 1;
-    $target_dir = "/var/www/html/schoolproject/src/images/";
-    $file = $target_dir . $_POST["first-name"] . $_POST["last-name"] . rand(1, 100000) . basename($_FILES["image"]["name"]);
+    $target_dir = $upload_dir;
+    $file = $target_dir . $_POST["first-name"] . $_POST["last-name"] . $rand . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
     echo $file;

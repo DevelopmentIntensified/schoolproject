@@ -9,7 +9,6 @@ $routes = [
     '/productrating' => './src/routes/productRatings.php',
     '/logout' => './src/routes/logout.php',
     '/login' => './src/routes/login.php',
-    '/register' => './src/routes/register.php',
     '/mission' => './src/routes/mission.php',
     '/ourteam' => './src/routes/employees.php',
 ];
@@ -26,8 +25,10 @@ if (isset($_SESSION['user'])) {
     $routes['/removefromcart'] = './src/routes/removefromcart.php';
     $routes['/clearcart'] = './src/routes/clearcart.php';
     $routes['/createcomment'] = './src/routes/createcomment.php';
-    $routes['/deletecomment'] = './src/routes/deletecomment.php';
     $routes['/editcomment'] = './src/routes/editcomment.php';
+    foreach ($products as $productName => $product) {
+        $routes['/rateproduct?id=' . rawurlencode($product["id"])] = './src/routes/rateproduct.php';
+    };
 }
 
 if (isset($_SESSION['user'])) {
@@ -35,15 +36,19 @@ if (isset($_SESSION['user'])) {
         $routes['/editemployees'] = './src/routes/editemployees.php';
         $routes['/createproduct'] = './src/routes/createproduct.php';
         $routes['/createemployee'] = './src/routes/createemployee.php';
+        $routes['/editproduct'] = './src/routes/editproduct.php';
+        foreach ($products as $productName => $product) {
+            $routes['/editproduct?id=' . rawurlencode($product["id"])] = './src/routes/editproduct.php';
+        };
     }
-    
-    if($_SESSION["user"]["role"] == "admin") {
+
+    if ($_SESSION["user"]["role"] == "admin") {
+        $routes['/admin'] = './src/routes/adminpage.php';
+        $routes['/deleteuser'] = './src/routes/deleteuser.php';
+        $routes['/changeuserrole'] = './src/routes/changeuserrole.php';
+        $routes['/adduser'] = './src/routes/adduser.php';
+        $routes['/deletecomment'] = './src/routes/deletecomment.php';
         $routes['/deleteemployee'] = './src/routes/deleteemployee.php';
         $routes['/deleteproduct'] = './src/routes/deleteproduct.php';
     }
 }
-
-
-foreach ($products as $productName => $product) {
-    $routes['/rateproduct?id=' . rawurlencode($productName)] = './src/routes/rateproduct.php';
-};

@@ -11,9 +11,5 @@
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    mysqli_close($conn);
-
     header("Location: ./ourteam");
-    exit();
-
 ?>

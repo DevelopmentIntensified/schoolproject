@@ -293,5 +293,27 @@ $result = mysqli_query($conn, $getProductsSql);
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $products[$row["name"]] = $row;
+        $products[$row["name"]]["questions"] = [
+            "This is usually completed on time?" => [
+                "answer" => "",
+                "name" => "time"
+            ],
+            "This is usually completed to your satisfaction?" => [
+                "answer" => "",
+                "name" => "satisfaction"
+            ],
+            "I would reccomend this product to a friend?" => [
+                "answer" => "",
+                "name" => "friend"
+            ],
+            "I would buy this product again?" => [
+                "answer" => "",
+                "name" => "again"
+            ],
+            "I would buy this product at this price?" => [
+                "answer" => "",
+                "name" => "price"
+            ]
+        ];
     }
 }

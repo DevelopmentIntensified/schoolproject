@@ -4,7 +4,7 @@
 
     $username = $_POST['username'];
     $title = $_POST['title'];
-    $comment = $_POST['comment'];
+    $comment = str_replace("'", "\'", mysqli_real_escape_string($conn, $_POST['comment']));
 
     $sql = "INSERT INTO comments (username, title, comment) VALUES ('$username', '$title', '$comment')";
 

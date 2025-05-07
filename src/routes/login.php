@@ -40,7 +40,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <h2>Login</h2>
 
 <div class="w-full text-center">
-    <h5>Don't have an account? <a href="./register">Register</a></h5>
     <h5 class="text-center text-red"><?php echo $error; ?></h5>
     <form action="./login" method="post">
         <label for="username">Username:</label>

@@ -27,19 +27,23 @@
     <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
         <?php
         $links = array();
-        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == "admin") {
+        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == "admin" || $_SESSION['user']['role'] == "publisher") {
             $links = array(
+                array("./createemployee", "New Employee"),
+                array("./createproduct", "New Product"),
                 array("./editemployees", "Edit Our Team"),
                 array("./productrating", "Product Rating"),
                 array("./shop", "Shop"),
-                array("./Cart", "Cart"),
+                array("./cart", "Cart"),
             );
+            if($_SESSION['user']['role'] == "admin"){
+                $links[] = array("./admin", "Admin");
+            }
         } else if (isset($_SESSION['user'])) {
             $links = array(
                 array("./shop", "Shop"),
-                array("./Cart", "Cart"),
+                array("./cart", "Cart"),
             );
-        } else {
         }
 
         if (isset($_SESSION["user"])) {

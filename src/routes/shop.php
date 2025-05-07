@@ -21,7 +21,7 @@ include "src/components/products.php";
                 </form>
             ";
             if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "publisher" || $_SESSION["user"]["role"] == "admin") {
-                echo "<form action='./edit' method='post'>
+                echo "<form action='./editproduct' method='get'>
                     <input type='hidden' name='id' value='" . $product["id"] . "'>
                     <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Edit Product</button>
                 </form>";

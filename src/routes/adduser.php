@@ -30,18 +30,7 @@ if (isset($_POST['username']) || isset($_POST['password']) || isset($_POST['emai
         } else {
                 $insertUserSql = "INSERT INTO users (username, password, firstname, lastname, emailAddress, role) VALUES ('$username', '$hashedPassword', '$firstname', '$lastname', '$email', 'customer')";
             if (mysqli_query($conn, $insertUserSql)) {
-                $last_id = mysqli_insert_id($conn);
-                $sql = "SELECT * FROM users WHERE id = $last_id";
-                $result = mysqli_query($conn, $sql);
-
-                if (mysqli_num_rows($result) > 0) {
-                  // output data of each row
-                  while($row = mysqli_fetch_assoc($result)) {
-                    $_SESSION['user'] = $row;
-                  }
-                }
-
-                header("Location: ./");
+                header("Location: ./admin");
             } else {
                 $error = "Unable to create user: " . mysqli_error($conn);
             }
@@ -50,13 +39,12 @@ if (isset($_POST['username']) || isset($_POST['password']) || isset($_POST['emai
 }
 ?>
 
-<h2>Register</h2>
+<h2>Add User</h2>
 
 
 <div class="w-full text-center">
-    <h5>Already have an account? <a href="./login">Login</a></h5>
     <h5 class="text-center text-red"><?php echo $error; ?></h5>
-    <form class="flex flex-col w-56 mx-auto" action="./register" method="post">
+    <form class="flex flex-col w-56 mx-auto" action="./adduser" method="post">
         <label for="username">Username:</label>
         <br></br>
         <input class="bg-primary rounded text-white p-2" type="text" name="username" id="username" required>
