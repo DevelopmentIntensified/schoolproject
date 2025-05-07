@@ -14,10 +14,12 @@
         }
         echo "<br>";
     }
-    if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher") {
-        echo "<br></br><br></br>";
-        echo "<a class='m-2 p-2 rounded bg-primary-400 text-black' href='./editemployees'>Edit Employees</a><br></br>";
-        echo "<a class='m-2 p-2 rounded bg-primary-400 text-black' href='./createemployee'>New Employee</a>";
+    if (isset($_SESSION["user"])) {
+        if ($_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher") {
+            echo "<br></br><br></br>";
+            echo "<a class='m-2 p-2 rounded bg-primary-400 text-black' href='./editemployees'>Edit Employees</a><br></br>";
+            echo "<a class='m-2 p-2 rounded bg-primary-400 text-black' href='./createemployee'>New Employee</a>";
+        }
     }
     ?>
 
