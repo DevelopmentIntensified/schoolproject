@@ -27,7 +27,7 @@
     <div id="menu" class="hidden absolute top-12 left-32 w-12 flex-col">
         <?php
         $links = array();
-        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == "admin" || $_SESSION['user']['role'] == "publisher") {
+        if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == "admin" || $_SESSION['user']['role'] == "publisher")) {
             $links = array(
                 array("./createemployee", "New Employee"),
                 array("./createproduct", "New Product"),

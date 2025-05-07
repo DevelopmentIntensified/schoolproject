@@ -2,7 +2,7 @@
 include 'src/components/mysqlconnection.php';
 $id = $_GET['id'];
 if (isset($_SESSION["user"])) {
-    if (isset($_GET["first-name"]) && $_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher") {
+    if (isset($_GET["first-name"]) && ($_SESSION["user"]["role"] == "admin" || $_SESSION["user"]["role"] == "publisher")) {
         $updateEmployeeSql = "update employees 
     set firstName = '" . $_GET["first-name"] . "',
     lastName = '" . $_GET["last-name"] . "',

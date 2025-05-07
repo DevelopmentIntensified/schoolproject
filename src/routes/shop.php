@@ -20,7 +20,7 @@ include "src/components/products.php";
                     <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Add to Cart</button>
                 </form>
             ";
-            if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "publisher" || $_SESSION["user"]["role"] == "admin") {
+            if (isset($_SESSION["user"]) && ($_SESSION["user"]["role"] == "publisher" || $_SESSION["user"]["role"] == "admin")) {
                 echo "<form action='./editproduct' method='get'>
                     <input type='hidden' name='id' value='" . $product["id"] . "'>
                     <button class='m-2 p-2 rounded bg-primary-400 block' type='submit'>Edit Product</button>
