@@ -38,8 +38,8 @@ if (mysqli_num_rows($result) > 0) {
         <?php foreach ($users as $user) : ?>
             <tr>
                 <td><?= $user["username"] ?></td>
-                <td><?= $user["firstname"] ?></td>
-                <td><?= $user["lastname"] ?></td>
+                <td><?= $user["firstName"] ?></td>
+                <td><?= $user["lastName"] ?></td>
                 <td><?= $user["emailAddress"] ?></td>
                 <td><?= $user["role"] ?></td>
                 <td>
